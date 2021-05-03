@@ -1,1 +1,56 @@
+// variables and mixins
+$dark: #343a40;
+$light: #f8f9fa;
+
+// global styles
+* {
+    border-radius: 0 !important;
+}
+
+a {
+    color: $dark;
+    text-decoration: underline !important;
+
+    &:hover {
+        color: $dark;
+        text-decoration: none !important;
+    }
+}
+
+body {
+    background-color: $dark;
+}
+
+.bg-secondary,
+.bg-dark {
+    a {
+        color: $light;
+
+        &:hover {
+            color: $light;
+        }
+    }
+}
+
+.unread {
+    &__nav-link {
+        &--active {
+            text-decoration: none !important;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+    }
+
+    &__post-details {
+        font-size: 0.8rem;
+    }
+
+    &__search-box {
+        border: none;
+    }
+}
+
+// imports
 @import 'css/bootstrap.min.css';
