@@ -14,7 +14,7 @@
         <a class='unread__post-link mx-1' 
           href='https://news.ycombinator.com/item?id={{ post.id }}'
           rel='noopener noreferrer'
-          target='_blank'>{{ post.descendants }} comments</a>
+          target='_blank'>{{ post.descendants > 0 ? post.descendants : 'no' }} comments</a>
 
         by <a class='unread__post-link mr-1' 
           href='https://news.ycombinator.com/user?id={{ post.by }}'
