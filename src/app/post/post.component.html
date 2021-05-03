@@ -1,0 +1,27 @@
+<div class='unread__post px-1 py-3 bg-{{ clrBackground }} text-{{ clrText }}'>
+  <div class='container'>
+    <a class='unread__post-title'
+      href='{{ post.url }}'
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      {{ post.title }}
+    </a>
+
+    <div class='unread__post-details'>
+        <span class='unread__post-link mr-1 mx-lg-1'>{{ post.score }} points</span>
+
+        <a class='unread__post-link mx-1' 
+          href='https://news.ycombinator.com/item?id={{ post.id }}'
+          rel='noopener noreferrer'
+          target='_blank'>{{ post.descendants }} comments</a>
+
+        by <a class='unread__post-link mr-1' 
+          href='https://news.ycombinator.com/user?id={{ post.by }}'
+          rel='noopener noreferrer'
+          target='_blank'>
+          {{ post.by }}
+        </a>
+    </div>
+  </div>
+</div>

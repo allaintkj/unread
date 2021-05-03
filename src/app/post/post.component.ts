@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'post',
@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  @Input() clrBackground: string;
+  @Input() clrText: string;
+  @Input() post: any;
+
+
+  constructor() {
+    this.clrBackground = '';
+    this.clrText = '';
+  }
 
   ngOnInit(): void {
   }
