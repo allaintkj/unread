@@ -1,7 +1,9 @@
 <div class='unread__footer bg-dark text-center text-light py-5 px-1'>
   <div class='unread__search container'>
-    <input class='unread__search-box p-2 text-center' type='text' />
-    <br />
-    <a class='unread__search-link m-3 d-inline-block' href='/'>Search</a>
+    <form [formGroup]='this.searchForm' (ngSubmit)='this.search(this.searchForm.value)'>
+        <input class='unread__search-box p-2 text-center' [formControl]='this.searchTextBox' type='text' />
+        <br />
+        <button class='unread__search-btn m-3 d-inline-block' href='/'>Search</button>
+    </form>
   </div>
 </div>
