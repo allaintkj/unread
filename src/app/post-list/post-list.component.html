@@ -1,1 +1,9 @@
-<p>post-list works!</p>
+<div class='unread__post-list bg-light p-lg-5'>
+  <post *ngFor='let post of this.postService.postsHackerNews; let i = index'
+    [clrBackground]='i % 2 == 0 ? clrSec : clrLight'
+    [clrText]='i % 2 == 0 ? clrLight : clrDark'
+    [post]='post'>
+  </post>
+
+  <pagination></pagination>
+</div>

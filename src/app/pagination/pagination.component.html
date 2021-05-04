@@ -1,0 +1,7 @@
+<div class='unread__pagination px-1 py-3 bg-dark text-light'>
+  <div class='container d-flex justify-content-between'>
+    <a href='/{{ this.path }}/{{ (this.page - 1 > 0 ? this.page - 1 : 1) }}'>previous</a>
+
+    <a href='/{{ this.path }}/{{ (this.page + 1 > this.postService.lastPage ? this.postService.lastPage : this.page + 1 ) }}'>next</a>
+  </div>
+</div>

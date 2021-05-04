@@ -1,13 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-post',
+  selector: 'post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  @Input() clrBackground: string;
+  @Input() clrText: string;
+  @Input() post: any;
+
+
+  constructor() {
+    this.clrBackground = '';
+    this.clrText = '';
+  }
 
   ngOnInit(): void {
   }

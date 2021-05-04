@@ -1,1 +1,27 @@
-<p>post works!</p>
+<div class='unread__post px-1 py-3 bg-{{ clrBackground }} text-{{ clrText }}'>
+  <div class='container'>
+    <a class='unread__post-title'
+      href='{{ post.url }}'
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      {{ post.title }}
+    </a>
+
+    <div class='unread__post-details'>
+        <span class='unread__post-link mr-1 mx-lg-1'>{{ post.score }} {{ post.score > 1 ? 'points' : 'point' }}</span>
+
+        <a class='unread__post-link mx-1' 
+          href='https://news.ycombinator.com/item?id={{ post.id }}'
+          rel='noopener noreferrer'
+          target='_blank'>{{ post.descendants > 0 ? post.descendants : 'no' }} {{ post.descendants == 1 ? 'comment' : 'comments' }}</a>
+
+        by <a class='unread__post-link mr-1' 
+          href='https://news.ycombinator.com/user?id={{ post.by }}'
+          rel='noopener noreferrer'
+          target='_blank'>
+          {{ post.by }}
+        </a>
+    </div>
+  </div>
+</div>
