@@ -50,6 +50,17 @@ body {
     &__search-box {
         border: none;
     }
+
+    &__search-btn {
+        background: $dark;
+        border: none;
+        color: $light;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .loader,
