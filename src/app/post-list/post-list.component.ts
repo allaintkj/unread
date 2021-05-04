@@ -27,11 +27,10 @@ export class PostListComponent implements OnInit {
     path = (path === 'jobs' ? path.substr(0, path.length - 1) : path);
 
     // Determine page number to return posts for
-    let page = this.router.url.split('/')[2];
-    page = (parseInt(page) >= 1 ? page : '1');
+    let page = parseInt(this.router.url.split('/')[2]);
 
     // Have the service fetch our posts and update array for rendering
     // Could probably use an observable to return the array to this component
-    this.postService.getPostsHackerNews(path, parseInt(page));
+    this.postService.getPostsHackerNews(path, page);
   }
 }

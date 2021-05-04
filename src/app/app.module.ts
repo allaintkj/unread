@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { SearchComponent } from './search/search.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearchComponent } from './search/search.component';
     HeaderComponent,
     PostComponent,
     PostListComponent,
-    SearchComponent
+    SearchComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
