@@ -12,6 +12,7 @@ export class PostService {
 
   public lastPage: number = 1;
   public postsHackerNews: HNPost[] = [];
+  public loading: boolean = false;
 
   constructor(
     private router: Router,
@@ -19,6 +20,8 @@ export class PostService {
   ) { }
 
   public getPostsHackerNews(storyType: string = 'top', pageNumber: number = 1): void {
+    this.loading = true;
+
     // Get the full list of posts of <type>
     this.http.get<number[]>(`${this.apiHackerNews}${storyType}stories.json`).subscribe(
       posts => {
@@ -44,13 +47,16 @@ export class PostService {
             post => {
               // Add to array for rendering
               this.postsHackerNews.push(post);
+              this.loading = this.postsHackerNews.length === 10 ? false : true;              
             }, err => {
               console.log(err);
+              this.loading = false;
             }
           );
         });
       }, err => {
         console.log(err);
+        this.loading = false;
       }
     );
   }

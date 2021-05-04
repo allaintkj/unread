@@ -52,5 +52,43 @@ body {
     }
 }
 
+.loader,
+.loader:before,
+.loader:after {
+    background: $dark;
+    animation: loading 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+
+.loader {
+    color: $dark;
+    margin: 0 auto;
+    position: relative;
+    animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+
+.loader:before {
+    left: -1.5em;
+    animation-delay: -0.32s;
+}
+
+.loader:after {
+    left: 1.5em;
+}
+
+@keyframes loading {
+    0% { transform: scaleY(0.5); }
+    50% { transform: scaleY(1.2); }
+    100% { transform: scaleY(0.5); }
+}
+
 // imports
 @import 'css/bootstrap.min.css';
