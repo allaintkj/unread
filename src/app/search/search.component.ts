@@ -10,16 +10,13 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class SearchComponent implements OnInit {
   public searchForm: FormGroup;
 
-  constructor(
-    private fb: FormBuilder
-  ) {
+  constructor(private fb: FormBuilder) {
     this.searchForm = this.fb.group({
       'searchText': ''
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   get searchTextBox() {
     return this.searchForm.controls['searchText'] as FormControl;
