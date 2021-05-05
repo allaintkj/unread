@@ -10,8 +10,8 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class SearchComponent implements OnInit {
   public searchForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.searchForm = this.fb.group({
+  constructor(private _fb: FormBuilder) {
+    this.searchForm = this._fb.group({
       'searchText': ''
     });
   }
@@ -23,6 +23,12 @@ export class SearchComponent implements OnInit {
   }
 
   public search(formSubmission: any): void {
+    // New tab with search query
     window.open(`https://hn.algolia.com/?q=${formSubmission.searchText}`, '_blank');
+
+    // Blank the search box
+    this.searchForm = this._fb.group({
+      'searchText': ''
+    });
   }
 }
