@@ -77,6 +77,10 @@ body {
     margin: 0 auto;
     position: relative;
     animation-delay: -0.16s;
+
+    &-wrapper {
+        padding: 2rem 0;
+    }
 }
 
 .loader:before,

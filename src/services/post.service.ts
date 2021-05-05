@@ -11,8 +11,9 @@ export class PostService {
   private postsPerPage: number = 10;
 
   public lastPage: number = 1;
-  public postsHackerNews: HNPost[] = [];
   public loading: boolean = false;
+  
+  public postsHackerNews: HNPost[] = [];
 
   constructor(
     private router: Router,
